@@ -1,42 +1,46 @@
-export const cafeDataArr = [
+export const ratFactsArr = [
     {
-        heading: 'Our Commitment to Our Growers',
-        teaser: 'Our growers enjoy the immense benefits of our fair trade practices and sustainable farming initiatives.'
+        heading: 'Global Distribution',
+        teaser: 'The brown rat (Rattus norvegicus), also known as the NOrway rat, is one of the most widespread mammals, originating from Asia, it has spread globally due to human activitues, thriving in diverse environments form cities to rural areas.'
     },
     {
-        heading: 'Explore Our Menu',
-        teaser: 'Discover our selection of handcrafted beverages and gourmet snacks tailored to tantalize your taste buds.'
+        heading: 'Adaptability',
+        teaser: 'Brown rats are incredibly adaptable. They can live in various habitats, including sewers, basements, and even the wild. Their ability to thrive in human environments has contributed significantly to their spread.'
     },
     {
-        heading: 'Brewing Techniques',
-        teaser: 'Learn the art of coffee making with our guide to various brewing methods from around the world.'
+        heading: 'Nocturnal Behavior',
+        teaser: 'These rats are primarily nocturnal, meaning they are most active at night. They use their acute sense of smell, hearing, and touche to navigate in the ark and find food.'
     },
     {
-        heading: 'Coffee House Events',
-        teaser: 'Join us for live music, poetry readings, and other exciting events at our local coffee house.'
+        heading: 'Omnivorous Diet',
+        teaser: 'Brown rats are omnivores, meaning they eat a wide range of foods. Their diet includes grains, fruits vegetables, and occasionally meat. They are opportunistic feeders, making them highly adaptable to different food sources.'
     },
     {
-        heading: 'Our Sustainability Journey',
-        teaser: 'We are committed to reducing our environmental footprint, one cup at a time. Discover our eco-friendly initiatives.'
+        heading: 'Social Structures',
+        teaser: 'Brown rats often live in colonies with complex social structures. Within these colonies, they establish hierarchies and communicate through vocalizations, scents, and body language.'
     },
     {
-        heading: 'Meet Our Baristas',
-        teaser: 'Get to know the passionate professionals who craft your perfect cup of coffee every day.'
+        heading: 'Reproductive Rate',
+        teaser: 'Brown rats have a high reproductive rate. A female can produce up to 12 litters per year, with each litter containing 6-12 pups. This high reproductive capacity contributes to their rapid population growth.'
     },
     {
-        heading: 'Membership Perks',
-        teaser: 'Become a member to enjoy exclusive discounts, special offers, and early access to our new products.'
+        heading: 'Teeth and Gnawing',
+        teaser: 'Their teeth grow continuously throughout their lives. TO prevent overgrowth, brown rats must gnaw on various materials, including wood, plastic, and even metal, to keep their teeth in check.'
     },
     {
-        heading: 'Coffee Origins',
-        teaser: 'Trace the journey of our beans from lush plantations across the globe to your coffee cup.'
+        heading: 'Learning Ability',
+        teaser: 'These rats are known for their intelligence and problem-solving abilities. They can learn complex tasks, remember solutions to problems , and even exibit behaviors that suggest a capacity for planning and foresight.'
     },
     {
-        heading: 'Gift Cards & Merchandise',
-        teaser: 'Find the perfect gift for the coffee lover in your life with our range of gift cards and branded merchandise.'
+        heading: 'Hygienic Behavior',
+        teaser: 'Despite their reputation, brown rats are surprisingly clean animals. They engage in grooming behaviors extensively, spending several hours a day cleaning themselves. This grooming helps them manage parasites and maintain a healthy coat, which is crucial for their overall well-being and survival.'
     },
     {
-        heading: 'Visit Us',
-        teaser: 'Experience the warmth and aroma of our coffee house by visiting us at one of our cozy locations.'
-    }
+        heading: 'Navigational Skills',
+        teaser: 'Brown rats have an impressive ability to navigate their surroundings. They use a combination of visual cues, spatial memory, and sensory information from their whiskers to move through complex environments. In experiments, they have demonstrated the ability to learn and remember routes through mazes, showcasing their advanced spatial awareness.'
+    },
+    // {
+    //     heading: '',
+    //     teaser: ''
+    // },
 ]

@@ -1,73 +1,54 @@
-/*
-When the page loads, this site should display the
-'header', 'hero', and 'nav' sections only.
+import { ratFactsArr } from '/apiData.js';
 
-As a user scrolls, more content should be added.
-There are ten content sections in total, which are
-loading from apiData.js
+function* fetchDataGenerator(arr) {
+    let maxSections = 10;
+    let sectionCount = 0;
 
-The handleScroll function should be debounced to
-limit the number of times a scroll event triggers it.
+    while (sectionCount <= maxSections) {
+        sectionCount++;
 
-If no debounce time is passed in, it should default
-to 100 milliseconds.
- 
-At the moment, the code is broken.
-
-Challenge:
-1. Identify and fix the bugs in this code.
-*/
-
-
-import { cafeDataArr } from '/apiData.js'
-
-function* fetchDataGenerator(maxSections = 10) {
-    let sectionCount = 0
-    while (true) {
-        sectionCount++
-        if (sectionCount >= maxSections) {
-            console.log("Max section limit reached, stopping generator.")
-        }
-        const fakeApiResponse = { sectionText: cafeDataArr[sectionCount] }
         // Simulate an asynchronous API call with a promise
-        console.log(fakeApiResponse)
-        return new Promise(resolve => setTimeout(() => resolve(fakeApiResponse), 100))
+        const fakeApiResponse = { sectionText: ratFactsArr[sectionCount] };
+        yield new Promise(resolve => setTimeout(() => resolve(fakeApiResponse), 100));
     }
+
+    console.log("Max section limit reached, stopping generator.");
 }
 
-const generator = fetchDataGenerator()
+const generator = fetchDataGenerator(ratFactsArr);
 
 function handleScroll() {
-    const result = generator.next()
-    if (!result) {
+    const result = generator.next();
+    console.log(result)
+    if (!result.done) {
         result.value.then(data => {
             // Process and display the data
-            const contentSection = document.createElement('section')
-            const sectionHeader = document.createElement('h3')
-            const sectionTeaser = document.createElement('p')
-            sectionHeader.innerText = data.sectionText.heading
-            sectionTeaser.innerText = data.sectionText.teaser
-            contentSection.appendChild(sectionHeader)
-            contentSection.appendChild(sectionTeaser)
-            document.body.appendChild(contentSection)
+            const contentSection = document.createElement('section');
+            const sectionHeader = document.createElement('h3');
+            const sectionTeaser = document.createElement('p');
+            sectionHeader.innerText = data.sectionText.heading;
+            sectionTeaser.innerText = data.sectionText.teaser;
+            contentSection.appendChild(sectionHeader);
+            contentSection.appendChild(sectionTeaser);
+            document.body.appendChild(contentSection);
         }).catch(error => {
-            console.error('Failed to load section:', error)
+            console.error('Failed to load section:', error);
         })
     } else {
-        console.log('No more sections to load.')
+        console.log('No more sections to load.');
     }
 }
 
 // Debouncing function
 function debounce(func, timeout) {
-    let debounceTimer
+    let debounceTimer;
     return function (...args) {
-        clearTimeout(debounceTimer)
+        clearTimeout(debounceTimer);
         setTimeout(() => {
             func.apply(...args)
-        }, timeout)
+        }, timeout);
     }
 }
 
 // Attach debounced handler to scroll event
-document.addEventListener('scroll', debounce(handleScroll))
+document.addEventListener('scroll', debounce(handleScroll));

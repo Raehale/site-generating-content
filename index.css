@@ -52,6 +52,25 @@ a:visited {
     color: #999;
 }
 
+button {
+    display: flex;
+
+    background-color: #be9b7b;
+
+    margin: 0 auto;
+    border: 0;
+    border-radius: 2px;
+    padding: .5rem 1rem;
+
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .75;
+
+    transition-duration: .25s;
+}
+
 section {
     padding: 2em 0;
     width: 100%;
@@ -60,12 +79,37 @@ section {
 }
 
 .hero {
-    background-image: url('/cafe.jpg');
-    min-height: 200px;
+    background-image: url('/images/nikolett-emmert-2-rats.jpg');
+    min-height: 300px;
+    background-position: 100% 75%;
     background-size: cover;
 }
 
 p {
     margin: 0 1em;
     text-align: left
+}
+
+.intro {
+    color: #999;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+main {
+    margin: .5rem 2rem;
+}
+
+.images-collage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(70px, 1fr));
+/* grid-template-columns: repeat(3, 1fr), repeat(3, minmax(70px, 1fr)); */
+    gap: 25px;
+}
+
+.collage-img {
+    max-width: 100%;
+    max-height: auto;
+    display: block;
 }

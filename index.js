@@ -1,9 +1,9 @@
 import { ratFactsArr } from '/apiData.js';
 
-function* fetchDataGenerator(arr) {
+function* fetchDataGenerator() {
     let maxSections = 10;
     let sectionCount = 0;
-
+    
     while (sectionCount <= maxSections) {
         sectionCount++;
 
@@ -19,7 +19,6 @@ const generator = fetchDataGenerator(ratFactsArr);
 
 function handleScroll() {
     const result = generator.next();
-    console.log(result)
     if (!result.done) {
         result.value.then(data => {
             // Process and display the data
@@ -40,15 +39,15 @@ function handleScroll() {
 }
 
 // Debouncing function
-function debounce(func, timeout) {
+function debounce(func, timeout = 100) {
     let debounceTimer;
     return function (...args) {
         clearTimeout(debounceTimer);
-        setTimeout(() => {
+        debounceTimer = setTimeout(() => {
             func.apply(...args)
         }, timeout);
     }
 }
 
 // Attach debounced handler to scroll event
-document.addEventListener('scroll', debounce(handleScroll));
+document.addEventListener('scroll', debounce(handleScroll, 100));
